@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ziad Ali — AI & Machine Learning Engineer focused on predictive modeling, Big Data systems, and Generative AI.">
+  <meta property="og:title" content="Ziad Ali | AI & Machine Learning Engineer">
+  <meta property="og:description" content="Predictive modeling, distributed data systems, and Generative AI solutions.">
+  <meta property="og:image" content="preview-banner.png">
+  <meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/ziad-portfolio/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Ziad Ali — AI & ML Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07090d; --panel:#0d1118; --panel2:#111722; --text:#eef3f8; --muted:#8d99a8;
+      --line:rgba(255,255,255,.09); --accent:#73f6bd; --accent2:#79a7ff; --danger:#ff6f91;
+      --max:1180px; --shadow:0 30px 80px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:
+      radial-gradient(circle at 75% 8%,rgba(115,246,189,.08),transparent 27rem),
+      radial-gradient(circle at 15% 35%,rgba(121,167,255,.07),transparent 25rem),var(--bg);
+      color:var(--text);line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .mono{font-family:"DM Mono",monospace}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,9,13,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .navin{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:-.04em}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:25px;color:#b8c2cf;font-size:13px}
+    .navlinks a:hover{color:var(--accent)}
+    .navcta{padding:10px 15px;border:1px solid var(--line);border-radius:999px;font-size:12px}
+    .menu{display:none;background:none;border:0;color:white;font-size:25px}
+    .mobile-drawer{position:fixed;top:0;right:-320px;width:min(320px,86vw);height:100vh;background:#0b1017;border-left:1px solid var(--line);z-index:60;padding:25px;transition:right .28s ease;display:flex;flex-direction:column;gap:4px;box-shadow:-25px 0 70px rgba(0,0,0,.45)}
+    .mobile-drawer.open{right:0}
+    .mobile-drawer .drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .mobile-drawer .drawer-head button{background:none;border:0;color:#fff;font-size:30px;cursor:pointer}
+    .mobile-drawer>a{padding:14px 8px;border-bottom:1px solid var(--line);color:#c7d0da;font-size:14px}
+    .mobile-drawer>a:hover{color:var(--accent)}
+    .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.58);backdrop-filter:blur(4px);z-index:55;opacity:0;pointer-events:none;transition:.25s}
+    .drawer-backdrop.open{opacity:1;pointer-events:auto}
+
+    .hero{min-height:100vh;display:grid;align-items:center;padding:130px 0 80px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+    .eyebrow{color:var(--accent);font:500 12px "DM Mono",monospace;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}
+    h1{font-size:clamp(48px,8vw,92px);line-height:.92;letter-spacing:-.07em;max-width:900px}
+    h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px rgba(238,243,248,.75)}
+    .lead{color:#aab5c2;font-size:18px;max-width:680px;margin:28px 0 32px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:10px;border:1px solid var(--line);font-weight:700;font-size:13px}
+    .btn.primary{background:var(--accent);color:#07110d;border-color:var(--accent)}
+    .btn:hover{transform:translateY(-2px);transition:.2s}
+    .portrait-card{position:relative;padding:12px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));box-shadow:var(--shadow);border-radius:24px}
+    .portrait-card img{border-radius:17px;aspect-ratio:4/5;object-fit:cover;object-position:center top;filter:saturate(.9) contrast(1.04)}
+    .status{position:absolute;left:30px;bottom:30px;background:rgba(7,9,13,.86);border:1px solid var(--line);backdrop-filter:blur(12px);padding:11px 13px;border-radius:12px;font-size:11px}
+    .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent);margin-right:7px}
+    section{padding:105px 0;border-top:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
+    .kicker{color:var(--accent);font:500 11px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.15em}
+    h2{font-size:clamp(32px,5vw,55px);letter-spacing:-.055em;line-height:1}
+    .section-note{color:var(--muted);max-width:420px;font-size:14px}
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+    .about p{font-size:20px;color:#c7d0da;max-width:760px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px}
+    .stat{border:1px solid var(--line);padding:18px;border-radius:14px;background:rgba(255,255,255,.025)}
+    .stat b{font-size:28px;display:block}.stat span{font-size:11px;color:var(--muted)}
+    .skillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .skill{border:1px solid var(--line);padding:22px;border-radius:16px;background:rgba(255,255,255,.025)}
+    .skill h3{font-size:14px;margin-bottom:10px}.skill p{color:var(--muted);font-size:13px}
+    .timeline{position:relative;display:grid;gap:14px}
+    .job{display:grid;grid-template-columns:190px 1fr;gap:35px;border:1px solid var(--line);padding:26px;border-radius:16px;background:rgba(255,255,255,.022)}
+    .date{font:500 11px "DM Mono",monospace;color:var(--accent);text-transform:uppercase}
+    .job h3{font-size:19px}.job .org{color:#9eabb9;font-size:13px;margin-bottom:12px}
+    .job ul{padding-left:18px;color:#b9c4cf;font-size:14px}.job li+li{margin-top:6px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+    .project{border:1px solid var(--line);border-radius:18px;padding:26px;background:linear-gradient(145deg,rgba(121,167,255,.05),rgba(115,246,189,.025));min-height:255px;display:flex;flex-direction:column}
+    .project .num{font:500 11px "DM Mono",monospace;color:var(--accent);margin-bottom:25px}
+    .project h3{font-size:24px;letter-spacing:-.03em}.project p{color:var(--muted);font-size:14px;margin:10px 0 18px}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}.tag{font:500 10px "DM Mono",monospace;border:1px solid var(--line);padding:6px 8px;border-radius:999px;color:#b8c4d0}
+    .certs{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+    .cert{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#0b0f15;min-height:190px}
+    .cert .preview{height:115px;background:linear-gradient(135deg,#121923,#0a0d12);display:grid;place-items:center;color:#687587;font:500 11px "DM Mono",monospace}
+    .cert .ct{padding:14px}.cert h3{font-size:13px}.cert p{font-size:11px;color:var(--muted);margin-top:4px}
+    .cert button{margin-top:10px;background:none;color:var(--accent);border:0;font-size:11px;cursor:pointer}
+    .edu{display:grid;grid-template-columns:1fr auto;gap:20px;border:1px solid var(--line);padding:28px;border-radius:17px}
+    .edu h3{font-size:22px}.edu p{color:var(--muted);font-size:14px}
+    .contact{display:grid;grid-template-columns:1fr .8fr;gap:60px;align-items:start}
+    .contact p{color:#b7c2ce;font-size:17px;max-width:600px}
+    .contactbox{border:1px solid var(--line);padding:22px;border-radius:16px;background:rgba(255,255,255,.025)}
+    .contactbox a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}.contactbox a:last-child{border:0}
+    footer{padding:35px 0;color:#687586;font-size:11px;border-top:1px solid var(--line);font-family:"DM Mono",monospace}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(12px);display:none;place-items:center;z-index:50;padding:20px}
+    .modal.open{display:grid}.modalbox{width:min(720px,100%);background:#0c1118;border:1px solid var(--line);border-radius:18px;padding:25px;position:relative}
+    .close{position:absolute;right:15px;top:12px;background:none;border:0;color:#fff;font-size:24px;cursor:pointer}
+    .modalbox img{max-height:70vh;width:100%;object-fit:contain;border-radius:10px;background:#080a0e}
+    .admin-note{font-size:12px;color:var(--muted);margin-top:20px}.admin-note code{color:var(--accent)}
+    @media(max-width:850px){
+      .navlinks,.navcta{display:none}.menu{display:block}.hero-grid,.about,.contact{grid-template-columns:1fr}.portrait-card{max-width:440px}
+      .skillgrid{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.certs{grid-template-columns:1fr 1fr}.job{grid-template-columns:1fr;gap:10px}
+    }
+    @media(max-width:520px){
+      .wrap{width:min(calc(100% - 26px),var(--max))}.skillgrid,.certs,.stats{grid-template-columns:1fr}
+      h1{font-size:50px}.hero{padding-top:105px}
+    }
+  
+    .lang-btn{background:none;border:1px solid var(--line);color:#b8c2cf;border-radius:999px;padding:7px 9px;font:500 10px "DM Mono",monospace;cursor:pointer}.lang-btn:hover{color:var(--accent);border-color:var(--accent)}
+    .playground{margin-top:24px;border:1px solid var(--line);border-radius:15px;padding:15px;background:rgba(255,255,255,.025);max-width:560px}.playground-head{display:flex;justify-content:space-between;font:500 10px "DM Mono",monospace;color:#8d99a8;letter-spacing:.12em}.playground-row{display:flex;gap:8px;margin-top:11px}.playground select{flex:1;background:#0b1017;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px;font:500 11px "DM Mono",monospace}.playground .btn{padding:10px 13px;cursor:pointer;background:transparent;color:var(--text)}.inference-result{margin-top:11px;color:#9eabb9;font:500 11px "DM Mono",monospace}.inference-result strong{color:var(--accent)}
+    .skill-meter{height:4px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;margin:0 0 11px}.skill-meter span{display:block;height:100%;width:78%;background:linear-gradient(90deg,var(--accent),var(--accent2));transform-origin:left;animation:skillGrow 1.2s ease both}.skill:nth-child(2) .skill-meter span{width:86%}.skill:nth-child(3) .skill-meter span{width:88%}.skill:nth-child(4) .skill-meter span{width:74%}.skill:nth-child(5) .skill-meter span{width:80%}.skill:nth-child(6) .skill-meter span{width:76%}@keyframes skillGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .architecture{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;gap:12px;align-items:center;border:1px solid var(--line);padding:22px;border-radius:17px;background:rgba(255,255,255,.022)}.architecture div{min-width:0}.architecture span{font:500 10px "DM Mono",monospace;color:var(--accent)}.architecture b{display:block;margin-top:5px;font-size:13px}.architecture small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.architecture i{font-style:normal;color:#596575}
+    body.rtl{direction:rtl}.rtl .navlinks{direction:rtl}.rtl .hero-grid,.rtl .about,.rtl .contact{text-align:right}.rtl .job ul{padding-left:0;padding-right:18px}.rtl .playground-row{direction:rtl}
+    @media(max-width:850px){.architecture{grid-template-columns:1fr 1fr;gap:18px}.architecture i{display:none}}
+    @media(max-width:520px){.playground-row{flex-direction:column}.playground .btn{width:100%;justify-content:center}}
+
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.service{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(145deg,rgba(121,167,255,.05),rgba(115,246,189,.025));transition:.25s}.service:hover{transform:translateY(-5px);border-color:rgba(115,246,189,.3)}.service img{width:100%;height:180px;object-fit:cover}.service-body{padding:21px}.service-num{font:500 10px "DM Mono",monospace;color:var(--accent)}.service h3{font-size:18px;margin:7px 0}.service p{color:var(--muted);font-size:13px}.project{overflow:hidden;padding:0}.project-image{width:100%;height:190px;object-fit:cover;border-bottom:1px solid var(--line)}.project>.num,.project>h3,.project>p,.project>.tags,.project>div:last-child{margin-left:26px;margin-right:26px}.project>.num{margin-top:24px}.availability{border-top:1px solid var(--line);background:linear-gradient(100deg,rgba(115,246,189,.08),rgba(121,167,255,.06))}.availability-inner{display:grid;grid-template-columns:1.1fr 1fr auto;gap:35px;align-items:center}.availability h2{margin-top:8px}.availability h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1px rgba(238,243,248,.75)}.availability p{color:#b7c2ce;font-size:14px}.availability .btn{white-space:nowrap}
+    @media(max-width:850px){.service-grid{grid-template-columns:1fr 1fr}.availability-inner{grid-template-columns:1fr}}
+    @media(max-width:520px){.service-grid{grid-template-columns:1fr}.service img{height:200px}.project-image{height:180px}}
+
+/* Editable certificate gallery */
+.cert .preview{position:relative;overflow:hidden}
+.cert .preview img{width:100%;height:100%;object-fit:cover}
+.cert .preview.empty-cert::after{content:'ADD CERTIFICATE IMAGE';font:500 10px "DM Mono",monospace;color:#687587}
+.rtl{direction:rtl}.rtl .navin,.rtl .section-head,.rtl .contact{direction:rtl}.rtl .navlinks{flex-direction:row-reverse}.rtl .contactbox{text-align:right}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap navin">
+    <a class="brand" href="#top">ZIAD<span>.</span>ALI FATHY</a>
+    <nav class="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#contact" data-i18n="contact">Contact</a><a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noreferrer">GitHub ↗</a><button class="lang-btn" id="langBtn" onclick="toggleLanguage()">AR</button>
+    </nav>
+    <a class="navcta" href="Ziad_Ali_CV.pdf">Download CV</a>
+    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head"><span class="brand">ZIAD<span>.</span>ALI FATHY</span><button onclick="toggleMenu()">×</button></div>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#experience" onclick="toggleMenu()">Experience</a>
+  <a href="#playground" onclick="toggleMenu()">AI Demo</a>
+  <a href="#architecture" onclick="toggleMenu()">Architecture</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#certificates" onclick="toggleMenu()">Certificates</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noreferrer">GitHub ↗</a>
+  <a href="#" onclick="toggleLanguage();toggleMenu();return false;">English / العربية</a>
+</div>
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleMenu()"></div>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">AI / Machine Learning Engineer</div>
+      <h1>Building <em>intelligent</em><br>systems that matter.</h1>
+      <p class="lead">I’m Ziad Ali — an AI and Machine Learning engineer focused on intelligent systems, data pipelines and Generative AI.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work ↗</a>
+        <a class="btn" href="Ziad_Ali_CV.pdf">View CV ↓</a>
+        <a class="btn" href="mailto:za239494@gmail.com">Let's connect</a>
+        <a class="btn" href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+      <div class="playground" id="playground">
+        <div class="playground-head"><span>INTERACTIVE PLAYGROUND</span><small>mock inference</small></div>
+        <div class="playground-row"><select id="modelSelect"><option>Random Forest</option><option>XGBoost</option><option>Neural Network</option></select><button class="btn" onclick="runInference()">Run Inference</button></div>
+        <div id="inferenceResult" class="inference-result">Ready to simulate a prediction.</div>
+      </div>
+    </div>
+    <div class="portrait-card">
+      <img src="assets/profile.jpg" alt="Ziad Ali professional portrait">
+      <div class="status"><span class="dot"></span>Available for AI / ML opportunities</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">01 / Profile</div><h2>Engineer mindset.<br>Data-first execution.</h2></div>
+      <p class="section-note">A portfolio built to make the technical story obvious in under a minute.</p></div>
+    <div class="about">
+      <div></div>
+      <div>
+        <p>Results-driven AI and Machine Learning professional with a Computer and Information Sciences background, with hands-on experience in predictive modeling, data pipeline automation, distributed Big Data infrastructure and Generative AI applications.</p>
+        <div class="stats">
+          <div class="stat"><b>300+</b><span>hours of advanced training</span></div>
+          <div class="stat"><b>89%</b><span>project model accuracy</span></div>
+          <div class="stat"><b>18%</b><span>LLM token-cost reduction</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">02 / Services</div><h2>What I can<br>help you build.</h2></div><p class="section-note">Practical AI, data and engineering services for teams that need clear analysis, reliable pipelines and working prototypes.</p></div>
+    <div class="service-grid">
+      <article class="service"><img src="assets/services/ml.svg" alt="Predictive machine learning illustration"><div class="service-body"><span class="service-num">01</span><h3>Predictive Machine Learning</h3><p>Build classification and regression workflows, from data cleaning and feature engineering to model evaluation and tuning.</p></div></article>
+      <article class="service"><img src="assets/services/data.svg" alt="Data analytics illustration"><div class="service-body"><span class="service-num">02</span><h3>Data Analysis & Dashboards</h3><p>Turn raw datasets into KPIs, visual reports and decision-ready dashboards using Python, SQL, Excel and BI workflows.</p></div></article>
+      <article class="service"><img src="assets/services/genai.svg" alt="Generative AI illustration"><div class="service-body"><span class="service-num">03</span><h3>Generative AI & LLM Workflows</h3><p>Prototype prompt pipelines, LLM evaluation workflows and practical GenAI components with measurable quality and cost goals.</p></div></article>
+      <article class="service"><img src="assets/services/bigdata.svg" alt="Big Data pipeline illustration"><div class="service-body"><span class="service-num">04</span><h3>Big Data & Data Pipelines</h3><p>Work with distributed processing concepts, Spark, Hive and Hadoop to organize and process larger datasets efficiently.</p></div></article>
+      <article class="service"><img src="assets/services/sql.svg" alt="SQL database illustration"><div class="service-body"><span class="service-num">05</span><h3>SQL & Database Solutions</h3><p>Design relational schemas, write optimized SQL, build CRUD analytics workflows and improve query performance with indexing.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">03 / Toolkit</div><h2>What I work with.</h2></div></div>
+    <div class="skillgrid">
+      <article class="skill"><h3>Programming</h3><div class="skill-meter"><span></span></div><p>Python · SQL</p></article>
+      <article class="skill"><h3>Data Science</h3><div class="skill-meter"><span></span></div><p>Pandas · NumPy · Matplotlib · EDA · Data Cleaning · Feature Engineering</p></article>
+      <article class="skill"><h3>Machine Learning</h3><div class="skill-meter"><span></span></div><p>Scikit-learn · Supervised Learning · Unsupervised Learning · Hyperparameter Tuning · Model Evaluation</p></article>
+      <article class="skill"><h3>Generative AI</h3><div class="skill-meter"><span></span></div><p>Generative AI applications · LLM integration workflows · Prompt pipelines · Validation benchmarks</p></article>
+      <article class="skill"><h3>Databases</h3><div class="skill-meter"><span></span></div><p>PostgreSQL · MySQL · SQL Server · Git / GitHub</p></article>
+      <article class="skill"><h3>Big Data</h3><div class="skill-meter"><span></span></div><p>Apache Hadoop · Apache Spark · Hive · HBase · Flink</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">04 / Experience</div><h2>Where I’ve been<br>building.</h2></div></div>
+    <div class="timeline">
+      <article class="job"><div class="date">Oct 2026 — Present</div><div><h3>Generative AI Engineer Trainee</h3><div class="org">Echo Inc.</div><ul><li>Engineered 5+ production-grade Generative AI application components and automated prompt pipelines across 4 sprint milestones.</li><li>Authored technical documentation and automated validation benchmarks for LLM integration workflows.</li><li>Benchmarked inference latency across 3 LLM architectures, reducing token consumption costs by 18%.</li></ul></div></article>
+      <article class="job"><div class="date">Aug — Oct 2026</div><div><h3>Machine Learning Trainee</h3><div class="org">Creativa</div><ul><li>Architected end-to-end ML pipelines processing 10,000+ data samples with cleaning and feature selection.</li><li>Optimized classification and regression models, improving baseline performance to an 88% precision score.</li><li>Evaluated 4 supervised learning algorithms using ROC-AUC and F1-score.</li></ul></div></article>
+      <article class="job"><div class="date">Sep — Oct 2026</div><div><h3>Data Analysis Trainee</h3><div class="org">Voltex</div><ul><li>Queried and aggregated relational datasets exceeding 50,000 records using advanced SQL and delivered 10+ executive KPI metrics.</li><li>Automated Python EDA and preprocessing workflows, accelerating recurring cycles by 20%.</li><li>Constructed 8 automated visual reports with Matplotlib and Pandas.</li></ul></div></article>
+      <article class="job"><div class="date">Jul — Sep 2026</div><div><h3>Big Data Associate Trainee</h3><div class="org">Huawei ICT Academy / NTI</div><ul><li>Completed 100+ hours of technical training in distributed computing, cluster scalability and enterprise storage.</li><li>Deployed distributed Spark and Hive queries, decreasing batch processing latency by 15%.</li><li>Executed MapReduce and HiveQL jobs on 500MB+ datasets with verified HDFS partition integrity.</li></ul></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">06 / Selected Work</div><h2>Projects with<br>measurable outcomes.</h2></div></div>
+    <div class="projects">
+      <article class="project"><img class="project-image" src="assets/projects/healthcare.svg" alt="Healthcare and clinical machine learning project illustration"><div class="num">PROJECT / 01</div><h3>Healthcare & Clinical Data Analysis Pipeline</h3><p>End-to-end cleaning, imputation, normalization and predictive risk classification across 15,000+ clinical records and 20+ variables.</p><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">SQL</span><span class="tag">89% accuracy</span></div><div style="display:flex;gap:8px;margin-top:18px"><a class="btn" href="https://github.com/YOUR-GITHUB-USERNAME/healthcare-ml-pipeline" target="_blank" rel="noreferrer">GitHub Repo ↗</a><a class="btn" href="#" onclick="showCase('Healthcare & Clinical Data Analysis Pipeline');return false">Model Demo / Report ↗</a></div></article>
+      <article class="project"><img class="project-image" src="assets/projects/enterprise.svg" alt="Enterprise database project illustration"><div class="num">PROJECT / 02</div><h3>Enterprise Database & CRUD Analytics System</h3><p>Full-stack data management application handling 20+ relational entities with ACID compliance and optimized query throughput.</p><div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">B-tree indexing</span><span class="tag">+25% speed</span></div><div style="display:flex;gap:8px;margin-top:18px"><a class="btn" href="https://github.com/YOUR-GITHUB-USERNAME/enterprise-database-crud" target="_blank" rel="noreferrer">Schema &amp; Queries (GitHub) ↗</a></div></article>
+    <article class="project"><img class="project-image" src="assets/projects/sales.svg" alt="Sales analytics dashboard project illustration"><div class="num">PROJECT / 03</div><h3>Sales & Business Analytics Dashboard</h3><p>Interactive analysis workflow for revenue, product performance, regions and time-based sales trends. Ready for an Excel / Power BI dashboard screenshot or live embed.</p><div class="tags"><span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">EDA</span><span class="tag">KPI</span></div><div style="display:flex;gap:8px;margin-top:18px"><a class="btn" href="#" onclick="showCase('Sales & Business Analytics Dashboard');return false">Interactive Dashboard ↗</a><a class="btn" href="https://github.com/YOUR-GITHUB-USERNAME/sales-analytics" target="_blank" rel="noreferrer">GitHub Repo ↗</a></div></article>
+</div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">08 / Engineering Approach</div><h2>From data<br>to production.</h2></div><p class="section-note">A systems-first workflow: reliable ingestion, reproducible features, validation, deployment and monitoring.</p></div>
+    <div class="architecture"><div><span>01</span><b>Data Ingestion</b></div><i>→</i><div><span>02</span><b>Preprocessing</b><small>Feature Engineering</small></div><i>→</i><div><span>03</span><b>Model Training</b><small>Validation</small></div><i>→</i><div><span>04</span><b>API / Deployment</b></div><i>→</i><div><span>05</span><b>Monitoring</b></div></div>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">09 / Credentials</div><h2>Certifications.</h2></div></div>
+    <div class="certs">
+      <article class="cert"><div class="preview"><img src="assets/certificates/HCIA-AI.jpg" alt="HCIA-AI V4.0 certificate" onerror="this.style.display='none';this.parentElement.classList.add('empty-cert')"></div><div class="ct"><h3>HCIA-AI V4.0</h3><p>Huawei ICT Academy</p><button onclick="openInfo('HCIA-AI V4.0','Huawei ICT Academy','assets/certificates/HCIA-AI.jpg')">View credential ↗</button></div></article>
+      <article class="cert"><div class="preview"><img src="assets/certificates/HCIA-BigData.jpg" alt="HCIA-Big Data V3.5 certificate" onerror="this.style.display='none';this.parentElement.classList.add('empty-cert')"></div><div class="ct"><h3>HCIA-Big Data V3.5</h3><p>Huawei ICT Academy</p><button onclick="openInfo('HCIA-Big Data V3.5','Huawei ICT Academy','assets/certificates/HCIA-BigData.jpg')">View credential ↗</button></div></article>
+      <article class="cert"><div class="preview"><img src="assets/certificates/Huawei-BigData-Associate.jpg" alt="Huawei Big Data Associate certificate" onerror="this.style.display='none';this.parentElement.classList.add('empty-cert')"></div><div class="ct"><h3>Huawei Big Data Associate</h3><p>NTI / Egyptian Talent Academy</p><button onclick="openInfo('Huawei Big Data Associate','NTI / Egyptian Talent Academy','assets/certificates/Huawei-BigData-Associate.jpg')">View credential ↗</button></div></article>
+      <article class="cert"><div class="preview"><img src="assets/certificates/AI-Fundamentals-Data-Analysis.jpg" alt="AI Fundamentals and Data Analysis certificate" onerror="this.style.display='none';this.parentElement.classList.add('empty-cert')"></div><div class="ct"><h3>AI Fundamentals & Data Analysis</h3><p>Skills Area / Partner Programs</p><button onclick="openInfo('AI Fundamentals and Data Analysis','Skills Area / Partner Programs','assets/certificates/AI-Fundamentals-Data-Analysis.jpg')">View credential ↗</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">07 / Education</div><h2>Foundation.</h2></div></div>
+    <div class="edu"><div><h3>B.Sc. in Computer and Information Sciences</h3><p>Benha National University · Track: Artificial Intelligence & Computer Science</p></div><div class="date">Expected June 2028</div></div>
+  </div>
+</section>
+
+
+<section class="availability">
+  <div class="wrap availability-inner"><div><div class="kicker">OPEN TO OPPORTUNITIES</div><h2>Ready for my next<br><em>training challenge.</em></h2></div><p>I’m open to AI, Machine Learning, Data Analysis, Big Data, Generative AI and software-focused training or internship opportunities — remote or on-site.</p><a class="btn primary" href="#contact">Let’s connect ↗</a></div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div><div class="kicker">11 / Contact</div><h2>Let’s build something<br>intelligent.</h2><p style="margin-top:22px">Open to any relevant training or internship opportunity where I can learn, contribute and build real-world AI, data and software systems.</p></div>
+    <div class="contactbox">
+      <a href="mailto:za239494@gmail.com">za239494@gmail.com ↗</a>
+      <a href="tel:+201114864671">+20 111 486 4671 ↗</a>
+      <a href="https://www.linkedin.com/in/ziad-ali-218282333/" target="_blank" rel="noreferrer">LinkedIn / ziad-ali-218282333 ↗</a>
+      <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noreferrer">GitHub / YOUR-GITHUB-USERNAME ↗</a>
+      <a href="Ziad_Ali_CV.pdf">Download CV ↘</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Ziad Ali · AI / ML Engineer · Built with intention.<br><span style="display:inline-block;margin-top:8px;opacity:.65">All editable content is documented in <code>EDIT_HERE.md</code>.</span></div></footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modalbox"><button class="close" onclick="closeModal()">×</button><h3 id="modalTitle"></h3><p id="modalText" style="color:#9aa7b5;margin:8px 0 18px"></p><div id="modalImage"></div></div>
+</div>
+<script>
+function openInfo(title,text,imgSrc){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalText').textContent=text;
+  const box=document.getElementById('modalImage');
+  if(imgSrc){
+    box.innerHTML='<img src="'+imgSrc+'" alt="'+title+' certificate" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\';"><div style="display:none;padding:45px;text-align:center;border:1px dashed rgba(255,255,255,.12);border-radius:12px;color:#6f7c8b;font:12px DM Mono,monospace">Certificate image not uploaded yet.</div>';
+  }else{
+    box.innerHTML='<div style="padding:45px;text-align:center;border:1px dashed rgba(255,255,255,.12);border-radius:12px;color:#6f7c8b;font:12px DM Mono,monospace">Certificate image not uploaded yet.</div>';
+  }
+  document.getElementById('modal').classList.add('open')
+}
+function showCase(title){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalText').textContent='Case study preview — add the real dashboard, report, README or demo URL here.';
+  document.getElementById('modalImage').innerHTML='<div style="padding:55px;text-align:center;border:1px dashed rgba(115,246,189,.35);border-radius:12px;color:#73f6bd;font:12px DM Mono,monospace">LIVE DEMO / DASHBOARD SLOT READY</div>';
+  document.getElementById('modal').classList.add('open')
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+
+const translations={
+  en:{contact:'Contact'},
+  ar:{contact:'تواصل'}
+};
+function toggleLanguage(){
+  const body=document.body; const btn=document.getElementById('langBtn'); const ar=!body.classList.contains('rtl');
+  body.classList.toggle('rtl',ar); document.documentElement.lang=ar?'ar':'en'; if(btn)btn.textContent=ar?'EN':'AR';
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=ar?translations.ar[el.dataset.i18n]:translations.en[el.dataset.i18n]);
+}
+function runInference(){
+  const model=document.getElementById('modelSelect').value; const scores={'Random Forest':'89.2%','XGBoost':'91.4%','Neural Network':'90.1%'};
+  document.getElementById('inferenceResult').innerHTML='<b>'+model+'</b> → predicted risk: <strong>LOW</strong> · confidence '+scores[model];
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
